@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista produktów</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="p-3 mb-2 bg-light text-dark">
+    <div class="container">
+        <h2 class="text-center mt-4">Lista produktów</h2>
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th class="text-center">Nazwa produktu</th>
+                    <th class="text-center">Liczba opinii</th>
+                    <th class="text-center">Średnia ocena</th>
+                    <th class="text-center">Liczba zalet</th>
+                    <th class= text-center">Liczba wad</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                <tr class="table-{{ loop.cycle('light', 'secondary') }}">
+                    <td class="text-center"><a href="{{ url_for('product_page', product_id=product.id) }}" style="color: #6c757d;">{{ product.name }}</a></td>
+                    <td class="text-center">{{ product.whole_count_of_opinions }}</td>
+                    <td class="text-center">{{ product.average_score }}</td>
+                    <td class="text-center">{{ product.whole_count_of_pros }}</td>
+                    <td class="text-center">{{ product.whole_count_of_cons }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="container text-center mt-4">
+        <a href="/" class="btn btn-dark">Powrót do strony głównej</a>
+    </div>
+    <div class="container text-center mt-4">
+        <a href="/ekstrakcja_opinii" class="btn btn-dark">Powrót do ekstrakcji</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
