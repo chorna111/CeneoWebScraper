@@ -1,11 +1,28 @@
 from app import app
+from flask import render_template
+@app.route('/')
+@app.route('/index')
+
+
 @app.route('/')
 @app.route('/index')
 def index():
-    return 'Hello, Anastazja Czorna!'
-@app.route('/name/',defaults={'name':None})
-@app.route('/name/<name>')
-def name(name):
-    return f'Hello,{name}!'
+    return render_template('index.html')
+
+@app.route('/extract')
+def extract():
+    return render_template('extract.html')
+
+@app.route('/products')
+def products():
+    return render_template('products.html')
+
+@app.route('/product')
+def product():
+    return render_template('product.html')
+
+@app.route('/author')
+def author():
+    return render_template('author.html')
 
 
