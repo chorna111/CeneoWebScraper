@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wykresy</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+    <body class="p-3 mb-2 bg-light text-dark">
+    <div class="container">
+        <h2 class="text-center mt-4">Wykresy</h2>
+        <div class="card">
+            <div class="card-body text-center">
+
+
+        
+        <img src="{{ url_for('static', filename=filename_for_score_chart) }}" alt="Opis obrazka">
+        <img src="{{ url_for('static', filename=filename_for_recommendation_chart) }}" alt="Opis obrazka">
+</div>
+</div>
+        <div class="text-center mt-4">
+            <a href="/lista-produktow" class="btn btn-dark">Powrót do listy produktów</a>
+        </div>
+        <div class="text-center mt-4">
+            <a href="{{ url_for('product_page', product_id=product_id) }}" class="btn btn-dark">Powrót do strony produktu</a>
+        
+           
+        </div>
+        </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
